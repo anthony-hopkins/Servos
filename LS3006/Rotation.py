@@ -72,7 +72,7 @@ class Grip:
 			except Exception as e:
 				print(e)
 		else:
-			print("You fucking suck. Use proper parameters")
+			print("Use proper parameters...")
 			sys.exit(1)
 
 
