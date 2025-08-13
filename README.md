@@ -179,9 +179,18 @@ gpio -g write 18 1
 ### Movement Control
 
 - **Open Operation**: Clockwise rotation for opening gripper
-- **Close Operation**: Counter-clockwise rotation for closing
+- **Close Operation**: Counter-clockwise rotation for closing  
 - **Precise Movement**: Custom duration and duty cycle control
 - **Hold Function**: Maintains position with specified pressure
+
+### Method Documentation
+
+Each method includes clear docstrings:
+- `open()` - Rotate clockwise to open gripper
+- `close()` - Rotate counter-clockwise to close gripper
+- `precise_move(duration, duty)` - Execute precise movement with custom parameters
+- `hold(duration, duty)` - Maintain grip pressure for specified duration
+- `start(type, duration, duty)` - Main control method for servo operations
 
 ### Duty Cycle Calculations
 
@@ -192,8 +201,10 @@ grip_cycle = (duty / 18.0) + 2.0
 
 Where:
 - **duty**: Input value (0-180 scale)
-- **grip_cycle**: Actual PWM duty cycle
+- **grip_cycle**: Actual PWM duty cycle  
 - **2.0**: Base offset for servo control
+
+**Note**: Neutral position (90) = slowest rotation, extremes (0/180) = fastest rotation
 
 ### Timing Control
 
@@ -223,6 +234,8 @@ Where:
 - **Power Management**: Use external power supply for servos
 - **Error Handling**: Implement proper exception handling
 - **GPIO Cleanup**: Always clean up GPIO pins after use
+- **Code Quality**: Use clear docstrings and professional comments
+- **Documentation**: Keep README updated with code changes
 
 ## 🚀 Production Deployment
 
